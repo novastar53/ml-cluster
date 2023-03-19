@@ -117,7 +117,7 @@ resource "aws_ebs_volume" "jupyter" {
 
 
 resource "aws_volume_attachment" "jupyter" {
-  device_name  = "/dev/sdf"
+  device_name  = "/dev/xvdf"
   instance_id  = "${aws_instance.jupyter.id}"
   volume_id    = "${aws_ebs_volume.jupyter.id}"
   force_detach = true
