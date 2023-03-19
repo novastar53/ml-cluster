@@ -5,14 +5,19 @@ variable "secret_key" {
         description = "Secret key to AWS console"
 }
 
+variable "availability_zone" {
+        description = "Availability zone for the ec2 instances"
+        default = "us-east-1a"
+}
+
 
 variable "instance_name" {
         description = "Name of the instance to be created"
-        default = "awsbuilder-demo"
+        default = "ml-instance"
 }
 
 variable "instance_type" {
-        default = "t2.micro"
+        default = "t2.large"
 }
 
 variable "subnet_id" {
@@ -22,7 +27,7 @@ variable "subnet_id" {
 
 variable "ami_id" {
         description = "The AMI to use"
-        default = "ami-09d56f8956ab235b3"
+        default = "ami-0d08c00fae325064c"
 }
 
 variable "number_of_instances" {
@@ -31,7 +36,14 @@ variable "number_of_instances" {
 }
 
 
-variable "ami_key_pair_name" {
-        default = "ml-cluster-keypair"
+variable "service" {
+        default = "jupyter"
 }
 
+variable "contact" {
+        default = "vikramp1987@gmail.com"
+}
+
+variable "environment" {
+        default = "TEST"
+}
